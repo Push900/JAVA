@@ -1,0 +1,45 @@
+import java.util.*;
+class CityHighestTemp{
+	public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+//variables
+		int temp=Integer.MIN_VALUE;
+		int max_day=-1;
+		int max_city=-1;
+//array initialise
+		int [][]array;
+		array=new int[7][2]; 
+//all loops
+		for(int i=0;i<7;i++){
+			for(int j=0;j<2;j++){
+				System.out.println("Enter the temperature on day"+(i+1)+" of city"+(j+1));
+			 	array[i][j]=sc.nextInt();
+			}
+		}
+
+		System.out.println("\n\n");
+
+		for(int i=0;i<7;i++){
+			for(int j=0;j<2;j++){
+				System.out.print(array[i][j]+"  ");
+			}
+			System.out.print("\n");
+		}
+
+		
+		System.out.println("\n\n");
+
+		for(int i=0;i<2;i++){
+			for(int j=0;j<7;j++){
+				if(array[j][i]>temp){
+					temp=array[j][i];
+					max_city=i+1;
+					max_day=j+1;
+				}
+			}
+		}
+//results
+		System.out.println("The highest temperature was "+temp+"of city "+max_city+" day "+max_day);
+
+	}
+}
